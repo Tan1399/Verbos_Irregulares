@@ -1,0 +1,1378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.ML.OnnxRuntime.1.19.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.props" Condition="Exists('..\packages\Microsoft.ML.OnnxRuntime.1.19.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7B19D362-E676-4D9A-A34D-B65E4FDE4D1D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VerbosIngles</RootNamespace>
+    <AssemblyName>VerbosIngles</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.6.0\lib\net48\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.OnnxRuntime, Version=1.19.1.0, Culture=neutral, PublicKeyToken=f27f157f0a5b7bb6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ML.OnnxRuntime.Managed.1.19.1\lib\netstandard2.0\Microsoft.ML.OnnxRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FORMS\Arise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Arise.Designer.cs">
+      <DependentUpon>Arise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Awake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Awake.Designer.cs">
+      <DependentUpon>Awake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\be.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\be.Designer.cs">
+      <DependentUpon>be.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Bear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Bear.Designer.cs">
+      <DependentUpon>Bear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Beat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Beat.Designer.cs">
+      <DependentUpon>Beat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Become.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Become.Designer.cs">
+      <DependentUpon>Become.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Begin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Begin.Designer.cs">
+      <DependentUpon>Begin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Bent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Bent.Designer.cs">
+      <DependentUpon>Bent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\bet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\bet.Designer.cs">
+      <DependentUpon>bet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Bind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Bind.Designer.cs">
+      <DependentUpon>Bind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Bit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Bit.Designer.cs">
+      <DependentUpon>Bit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Bleed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Bleed.Designer.cs">
+      <DependentUpon>Bleed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Blow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Blow.Designer.cs">
+      <DependentUpon>Blow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Break.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Break.Designer.cs">
+      <DependentUpon>Break.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Breed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Breed.Designer.cs">
+      <DependentUpon>Breed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Bring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Bring.Designer.cs">
+      <DependentUpon>Bring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Broadcast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Broadcast.Designer.cs">
+      <DependentUpon>Broadcast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Build.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Build.Designer.cs">
+      <DependentUpon>Build.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Burn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Burn.Designer.cs">
+      <DependentUpon>Burn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Burst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Burst.Designer.cs">
+      <DependentUpon>Burst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Buy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Buy.Designer.cs">
+      <DependentUpon>Buy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Can.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Can.Designer.cs">
+      <DependentUpon>Can.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Catch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Catch.Designer.cs">
+      <DependentUpon>Catch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Choose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Choose.Designer.cs">
+      <DependentUpon>Choose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Cling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Cling.Designer.cs">
+      <DependentUpon>Cling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Cost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Cost.Designer.cs">
+      <DependentUpon>Cost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Creep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Creep.Designer.cs">
+      <DependentUpon>Creep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Cut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Cut.Designer.cs">
+      <DependentUpon>Cut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Deal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Deal.Designer.cs">
+      <DependentUpon>Deal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Dig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Dig.Designer.cs">
+      <DependentUpon>Dig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Do.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Do.Designer.cs">
+      <DependentUpon>Do.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Draw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Draw.Designer.cs">
+      <DependentUpon>Draw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Dream.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Dream.Designer.cs">
+      <DependentUpon>Dream.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Drink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Drink.Designer.cs">
+      <DependentUpon>Drink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Drive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Drive.Designer.cs">
+      <DependentUpon>Drive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Eat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Eat.Designer.cs">
+      <DependentUpon>Eat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Fall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Fall.Designer.cs">
+      <DependentUpon>Fall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Feed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Feed.Designer.cs">
+      <DependentUpon>Feed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Felt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Felt.Designer.cs">
+      <DependentUpon>Felt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\fight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\fight.Designer.cs">
+      <DependentUpon>fight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Find.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Find.Designer.cs">
+      <DependentUpon>Find.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Fly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Fly.Designer.cs">
+      <DependentUpon>Fly.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Forbid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Forbid.Designer.cs">
+      <DependentUpon>Forbid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Forget.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Forget.Designer.cs">
+      <DependentUpon>Forget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Forgive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Forgive.Designer.cs">
+      <DependentUpon>Forgive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Get.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Get.Designer.cs">
+      <DependentUpon>Get.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Grind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Grind.Designer.cs">
+      <DependentUpon>Grind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Guia1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Guia1.Designer.cs">
+      <DependentUpon>Guia1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Hang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Hang.Designer.cs">
+      <DependentUpon>Hang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Have.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Have.Designer.cs">
+      <DependentUpon>Have.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Hear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Hear.Designer.cs">
+      <DependentUpon>Hear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Hold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Hold.Designer.cs">
+      <DependentUpon>Hold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Keep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Keep.Designer.cs">
+      <DependentUpon>Keep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Kneel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Kneel.Designer.cs">
+      <DependentUpon>Kneel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Lay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Lay.Designer.cs">
+      <DependentUpon>Lay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Lead.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Lead.Designer.cs">
+      <DependentUpon>Lead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Lean.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Lean.Designer.cs">
+      <DependentUpon>Lean.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Learn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Learn.Designer.cs">
+      <DependentUpon>Learn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Leave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Leave.Designer.cs">
+      <DependentUpon>Leave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Lend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Lend.Designer.cs">
+      <DependentUpon>Lend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Lie%28Mentir%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Lie%28Mentir%29.Designer.cs">
+      <DependentUpon>Lie%28Mentir%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Lie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Lie.Designer.cs">
+      <DependentUpon>Lie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Freeze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Freeze.Designer.cs">
+      <DependentUpon>Freeze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Give.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Give.Designer.cs">
+      <DependentUpon>Give.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Go.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Go.Designer.cs">
+      <DependentUpon>Go.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Grow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Grow.Designer.cs">
+      <DependentUpon>Grow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Hide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Hide.Designer.cs">
+      <DependentUpon>Hide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Hit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Hit.Designer.cs">
+      <DependentUpon>Hit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Hurt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Hurt.Designer.cs">
+      <DependentUpon>Hurt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Know.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Know.Designer.cs">
+      <DependentUpon>Know.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Light.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Light.Designer.cs">
+      <DependentUpon>Light.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Lose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Lose.Designer.cs">
+      <DependentUpon>Lose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Make.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Make.Designer.cs">
+      <DependentUpon>Make.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\May.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\May.Designer.cs">
+      <DependentUpon>May.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Mean.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Mean.Designer.cs">
+      <DependentUpon>Mean.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Meet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Meet.Designer.cs">
+      <DependentUpon>Meet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Model.cs" />
+    <Compile Include="FORMS\Mow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Mow.Designer.cs">
+      <DependentUpon>Mow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Must.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Must.Designer.cs">
+      <DependentUpon>Must.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Overtake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Overtake.Designer.cs">
+      <DependentUpon>Overtake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Pay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Pay.Designer.cs">
+      <DependentUpon>Pay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Put.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Put.Designer.cs">
+      <DependentUpon>Put.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Read.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Read.Designer.cs">
+      <DependentUpon>Read.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Ride.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Ride.Designer.cs">
+      <DependentUpon>Ride.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Ring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Ring.Designer.cs">
+      <DependentUpon>Ring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Rise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Rise.Designer.cs">
+      <DependentUpon>Rise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Saw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Saw.Designer.cs">
+      <DependentUpon>Saw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Say.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Say.Designer.cs">
+      <DependentUpon>Say.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\See.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\See.Designer.cs">
+      <DependentUpon>See.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Sell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Sell.Designer.cs">
+      <DependentUpon>Sell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Send.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Send.Designer.cs">
+      <DependentUpon>Send.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Set.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Set.Designer.cs">
+      <DependentUpon>Set.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Sew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Sew.Designer.cs">
+      <DependentUpon>Sew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Shake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Shake.Designer.cs">
+      <DependentUpon>Shake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Shall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Shall.Designer.cs">
+      <DependentUpon>Shall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Shed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Shed.Designer.cs">
+      <DependentUpon>Shed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Shine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Shine.Designer.cs">
+      <DependentUpon>Shine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Shoot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Shoot.Designer.cs">
+      <DependentUpon>Shoot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\shrink .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\shrink .Designer.cs">
+      <DependentUpon>shrink .cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Shut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Shut.Designer.cs">
+      <DependentUpon>Shut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Sing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Sing.Designer.cs">
+      <DependentUpon>Sing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Sink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Sink.Designer.cs">
+      <DependentUpon>Sink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Sit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Sit.Designer.cs">
+      <DependentUpon>Sit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Sleep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Sleep.Designer.cs">
+      <DependentUpon>Sleep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Slide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Slide.Designer.cs">
+      <DependentUpon>Slide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Smelt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Smelt.Designer.cs">
+      <DependentUpon>Smelt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Sow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Sow.Designer.cs">
+      <DependentUpon>Sow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Speak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Speak.Designer.cs">
+      <DependentUpon>Speak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Spell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Spell.Designer.cs">
+      <DependentUpon>Spell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Spend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Spend.Designer.cs">
+      <DependentUpon>Spend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Spill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Spill.Designer.cs">
+      <DependentUpon>Spill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Spin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Spin.Designer.cs">
+      <DependentUpon>Spin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Spit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Spit.Designer.cs">
+      <DependentUpon>Spit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Spread.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Spread.Designer.cs">
+      <DependentUpon>Spread.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Stand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Stand.Designer.cs">
+      <DependentUpon>Stand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Steal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Steal.Designer.cs">
+      <DependentUpon>Steal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Stick.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Stick.Designer.cs">
+      <DependentUpon>Stick.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Stink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Stink.Designer.cs">
+      <DependentUpon>Stink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Stinkcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Stinkcs.Designer.cs">
+      <DependentUpon>Stinkcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Strike.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Strike.Designer.cs">
+      <DependentUpon>Strike.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Swear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Swear.Designer.cs">
+      <DependentUpon>Swear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Sweep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Sweep.Designer.cs">
+      <DependentUpon>Sweep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Swell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Swell.Designer.cs">
+      <DependentUpon>Swell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Swin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Swin.Designer.cs">
+      <DependentUpon>Swin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Swing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Swing.Designer.cs">
+      <DependentUpon>Swing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Take.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Take.Designer.cs">
+      <DependentUpon>Take.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Teach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Teach.Designer.cs">
+      <DependentUpon>Teach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Tear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Tear.Designer.cs">
+      <DependentUpon>Tear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Tell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Tell.Designer.cs">
+      <DependentUpon>Tell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Think.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Think.Designer.cs">
+      <DependentUpon>Think.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Throw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Throw.Designer.cs">
+      <DependentUpon>Throw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Understand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Understand.Designer.cs">
+      <DependentUpon>Understand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Wake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Wake.Designer.cs">
+      <DependentUpon>Wake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Wear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Wear.Designer.cs">
+      <DependentUpon>Wear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Weep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Weep.Designer.cs">
+      <DependentUpon>Weep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Will.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Will.Designer.cs">
+      <DependentUpon>Will.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Win.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Win.Designer.cs">
+      <DependentUpon>Win.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Wind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Wind.Designer.cs">
+      <DependentUpon>Wind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Write.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Write.Designer.cs">
+      <DependentUpon>Write.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FORMS\Arise.resx">
+      <DependentUpon>Arise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Awake.resx">
+      <DependentUpon>Awake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\be.resx">
+      <DependentUpon>be.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Bear.resx">
+      <DependentUpon>Bear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Beat.resx">
+      <DependentUpon>Beat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Become.resx">
+      <DependentUpon>Become.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Begin.resx">
+      <DependentUpon>Begin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Bent.resx">
+      <DependentUpon>Bent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\bet.resx">
+      <DependentUpon>bet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Bind.resx">
+      <DependentUpon>Bind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Bit.resx">
+      <DependentUpon>Bit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Bleed.resx">
+      <DependentUpon>Bleed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Blow.resx">
+      <DependentUpon>Blow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Break.resx">
+      <DependentUpon>Break.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Breed.resx">
+      <DependentUpon>Breed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Bring.resx">
+      <DependentUpon>Bring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Broadcast.resx">
+      <DependentUpon>Broadcast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Build.resx">
+      <DependentUpon>Build.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Burn.resx">
+      <DependentUpon>Burn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Burst.resx">
+      <DependentUpon>Burst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Buy.resx">
+      <DependentUpon>Buy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Can.resx">
+      <DependentUpon>Can.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Catch.resx">
+      <DependentUpon>Catch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Choose.resx">
+      <DependentUpon>Choose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Cling.resx">
+      <DependentUpon>Cling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Cost.resx">
+      <DependentUpon>Cost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Creep.resx">
+      <DependentUpon>Creep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Cut.resx">
+      <DependentUpon>Cut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Deal.resx">
+      <DependentUpon>Deal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Dig.resx">
+      <DependentUpon>Dig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Do.resx">
+      <DependentUpon>Do.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Draw.resx">
+      <DependentUpon>Draw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Dream.resx">
+      <DependentUpon>Dream.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Drink.resx">
+      <DependentUpon>Drink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Drive.resx">
+      <DependentUpon>Drive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Eat.resx">
+      <DependentUpon>Eat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Fall.resx">
+      <DependentUpon>Fall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Feed.resx">
+      <DependentUpon>Feed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Felt.resx">
+      <DependentUpon>Felt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\fight.resx">
+      <DependentUpon>fight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Find.resx">
+      <DependentUpon>Find.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Fly.resx">
+      <DependentUpon>Fly.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Forbid.resx">
+      <DependentUpon>Forbid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Forget.resx">
+      <DependentUpon>Forget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Forgive.resx">
+      <DependentUpon>Forgive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Get.resx">
+      <DependentUpon>Get.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Grind.resx">
+      <DependentUpon>Grind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Guia1.resx">
+      <DependentUpon>Guia1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Hang.resx">
+      <DependentUpon>Hang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Have.resx">
+      <DependentUpon>Have.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Hear.resx">
+      <DependentUpon>Hear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Hold.resx">
+      <DependentUpon>Hold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Keep.resx">
+      <DependentUpon>Keep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Kneel.resx">
+      <DependentUpon>Kneel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Lay.resx">
+      <DependentUpon>Lay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Lead.resx">
+      <DependentUpon>Lead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Lean.resx">
+      <DependentUpon>Lean.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Learn.resx">
+      <DependentUpon>Learn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Leave.resx">
+      <DependentUpon>Leave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Lend.resx">
+      <DependentUpon>Lend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Lie%28Mentir%29.resx">
+      <DependentUpon>Lie%28Mentir%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Lie.resx">
+      <DependentUpon>Lie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Freeze.resx">
+      <DependentUpon>Freeze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Give.resx">
+      <DependentUpon>Give.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Go.resx">
+      <DependentUpon>Go.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Grow.resx">
+      <DependentUpon>Grow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Hide.resx">
+      <DependentUpon>Hide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Hit.resx">
+      <DependentUpon>Hit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Hurt.resx">
+      <DependentUpon>Hurt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Know.resx">
+      <DependentUpon>Know.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Light.resx">
+      <DependentUpon>Light.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Lose.resx">
+      <DependentUpon>Lose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Make.resx">
+      <DependentUpon>Make.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\May.resx">
+      <DependentUpon>May.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Mean.resx">
+      <DependentUpon>Mean.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Meet.resx">
+      <DependentUpon>Meet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Mow.resx">
+      <DependentUpon>Mow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Must.resx">
+      <DependentUpon>Must.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Overtake.resx">
+      <DependentUpon>Overtake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Pay.resx">
+      <DependentUpon>Pay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Put.resx">
+      <DependentUpon>Put.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Read.resx">
+      <DependentUpon>Read.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Ride.resx">
+      <DependentUpon>Ride.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Ring.resx">
+      <DependentUpon>Ring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Rise.resx">
+      <DependentUpon>Rise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Saw.resx">
+      <DependentUpon>Saw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Say.resx">
+      <DependentUpon>Say.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\See.resx">
+      <DependentUpon>See.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Sell.resx">
+      <DependentUpon>Sell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Send.resx">
+      <DependentUpon>Send.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Set.resx">
+      <DependentUpon>Set.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Sew.resx">
+      <DependentUpon>Sew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Shake.resx">
+      <DependentUpon>Shake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Shall.resx">
+      <DependentUpon>Shall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Shed.resx">
+      <DependentUpon>Shed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Shine.resx">
+      <DependentUpon>Shine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Shoot.resx">
+      <DependentUpon>Shoot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\shrink .resx">
+      <DependentUpon>shrink .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Shut.resx">
+      <DependentUpon>Shut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Sing.resx">
+      <DependentUpon>Sing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Sink.resx">
+      <DependentUpon>Sink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Sit.resx">
+      <DependentUpon>Sit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Sleep.resx">
+      <DependentUpon>Sleep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Slide.resx">
+      <DependentUpon>Slide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Smelt.resx">
+      <DependentUpon>Smelt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Sow.resx">
+      <DependentUpon>Sow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Speak.resx">
+      <DependentUpon>Speak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Spell.resx">
+      <DependentUpon>Spell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Spend.resx">
+      <DependentUpon>Spend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Spill.resx">
+      <DependentUpon>Spill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Spin.resx">
+      <DependentUpon>Spin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Spit.resx">
+      <DependentUpon>Spit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Spread.resx">
+      <DependentUpon>Spread.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Stand.resx">
+      <DependentUpon>Stand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Steal.resx">
+      <DependentUpon>Steal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Stick.resx">
+      <DependentUpon>Stick.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Stink.resx">
+      <DependentUpon>Stink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Stinkcs.resx">
+      <DependentUpon>Stinkcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Strike.resx">
+      <DependentUpon>Strike.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Swear.resx">
+      <DependentUpon>Swear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Sweep.resx">
+      <DependentUpon>Sweep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Swell.resx">
+      <DependentUpon>Swell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Swin.resx">
+      <DependentUpon>Swin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Swing.resx">
+      <DependentUpon>Swing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Take.resx">
+      <DependentUpon>Take.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Teach.resx">
+      <DependentUpon>Teach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Tear.resx">
+      <DependentUpon>Tear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Tell.resx">
+      <DependentUpon>Tell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Think.resx">
+      <DependentUpon>Think.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Throw.resx">
+      <DependentUpon>Throw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Understand.resx">
+      <DependentUpon>Understand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Wake.resx">
+      <DependentUpon>Wake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Wear.resx">
+      <DependentUpon>Wear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Weep.resx">
+      <DependentUpon>Weep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Will.resx">
+      <DependentUpon>Will.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Win.resx">
+      <DependentUpon>Win.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Wind.resx">
+      <DependentUpon>Wind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Write.resx">
+      <DependentUpon>Write.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.ML.OnnxRuntime.Managed.1.19.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.Managed.targets" Condition="Exists('..\packages\Microsoft.ML.OnnxRuntime.Managed.1.19.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.Managed.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.ML.OnnxRuntime.Managed.1.19.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.Managed.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.OnnxRuntime.Managed.1.19.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.Managed.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ML.OnnxRuntime.1.19.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.OnnxRuntime.1.19.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ML.OnnxRuntime.1.19.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ML.OnnxRuntime.1.19.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.ML.OnnxRuntime.1.19.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.targets" Condition="Exists('..\packages\Microsoft.ML.OnnxRuntime.1.19.1\build\netstandard2.0\Microsoft.ML.OnnxRuntime.targets')" />
+</Project>
